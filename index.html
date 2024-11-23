@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RBAC System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Role-Based Access Control System</h1>
+  </header>
+
+  <main>
+    <section id="user-management">
+      <h2>User Management</h2>
+      <div>
+        <button onclick="openUserModal()">Add User</button>
+        <table id="user-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="role-management">
+      <h2>Role Management</h2>
+      <div>
+        <button onclick="openRoleModal()">Add Role</button>
+        <table id="role-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Permissions</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- User Modal -->
+  <div id="user-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>User Details</h3>
+      <label for="user-name">Name:</label>
+      <input type="text" id="user-name">
+      <label for="user-role">Role:</label>
+      <select id="user-role"></select>
+      <label for="user-status">Status:</label>
+      <select id="user-status">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+      <button onclick="saveUser()">Save</button>
+      <button onclick="closeModal('user-modal')">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Role Modal -->
+  <div id="role-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Role Details</h3>
+      <label for="role-name">Role Name:</label>
+      <input type="text" id="role-name" style="width: 436px;">
+      <label for="role-permissions">Permissions:</label>
+      <div id="permissions-container">
+        <label> Read <input type="checkbox" value="Read"></label>
+        <label> Write <input type="checkbox" value="Write"></label>
+        <label> Delete <input type="checkbox" value="Delete"></label>
+      </div>
+      <button onclick="saveRole()">Save</button>
+      <button onclick="closeModal('role-modal')">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 VRV Security. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

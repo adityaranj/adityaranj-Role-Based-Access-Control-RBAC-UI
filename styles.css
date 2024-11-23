@@ -1,0 +1,255 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Header styling */
+  header {
+    background: linear-gradient(90deg, #4CAF50, #3E8E41);
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  /* Main content styling */
+  main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* Section headings */
+  h2 {
+    color: #222;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    border-left: 5px solid #4CAF50;
+    padding-left: 10px;
+  }
+  
+  /* Button styling */
+  button {
+    margin: 10px 5px;
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #3E8E41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Make tables responsive */
+  @media (max-width: 768px) {
+    table,
+    table th,
+    table td {
+      display: block;
+      width: 100%;
+    }
+  
+    table th {
+      display: none;
+    }
+  
+    table tr {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    table td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      width: calc(50% - 20px);
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+  
+  /* Modal styling */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .modal.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  .modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+    color: #4CAF50;
+    font-size: 1.5em;
+  }
+  
+  .modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #444;
+  }
+  
+  .modal-content input[type="text"],
+  .modal-content select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  #permissions-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Spacing between labels */
+    padding: 10px; /* Add padding around the container */
+  }
+  
+  #permissions-container label {
+    display: flex;
+    justify-content: space-between; /* Align text and checkbox horizontally */
+    align-items: center; /* Vertically align checkbox with text */
+    padding: 5px 10px; /* Add padding for better click target and spacing */
+    border: 1px solid #ddd; /* Optional: Add a light border for better visibility */
+    border-radius: 5px; /* Optional: Rounded corners */
+  }
+  
+  
+  
+  /* Responsive design for modals */
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+    }
+  }
+  
+  /* Responsive design for phone screens */
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.4em;
+    }
+  
+    h2 {
+      font-size: 1.4em;
+    }
+  
+    main {
+      padding: 10px;
+    }
+  
+    button {
+      padding: 10px 18px;
+      font-size: 0.9em;
+    }
+  
+    table td {
+      padding: 8px;
+    }
+  
+    .modal-content {
+      padding: 15px;
+    }
+  }
+  
+  footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Adjust to fixed if needed */
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
